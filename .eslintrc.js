@@ -22,6 +22,11 @@ module.exports = {
         "react",
         "@typescript-eslint"
     ],
+    "settings": {
+        "react": {
+            "version": "17.0"
+        }
+    },
     "rules": {
         "indent": [
             "error",
