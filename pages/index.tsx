@@ -12,46 +12,54 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
-                <h1>
-                    Welcome to <a href="https://nextjs.org">Next.js!</a>
+            <main className="p-20 text-center">
+                <h1 className="text-5xl font-bold">
+                    Welcome to <a href="https://nextjs.org" className="text-blue-500">Next.js!</a>
                 </h1>
 
-                <p>
+                <p className="mt-10 text-lg">
                     Get started by editing{" "}
                     <code>pages/index.tsx</code>
                 </p>
 
-                <div>
-                    <a href="https://nextjs.org/docs">
-                        <h2>Documentation &rarr;</h2>
-                        <p>Find in-depth information about Next.js features and API.</p>
+                <div className="mt-10 max-w-xl m-auto grid grid-cols-2 gap-4 text-left">
+                    <a
+                        href="https://nextjs.org/docs"
+                        className="block border p-5"
+                    >
+                        <h2 className="text-xl font-bold">Documentation &rarr;</h2>
+                        <p className="mt-4">Find in-depth information about Next.js features and API.</p>
                     </a>
 
-                    <a href="https://nextjs.org/learn">
-                        <h2>Learn &rarr;</h2>
-                        <p>Learn about Next.js in an interactive course with quizzes!</p>
+                    <a
+                        href="https://nextjs.org/learn"
+                        className="block border p-5"
+                    >
+                        <h2 className="text-xl font-bold">Learn &rarr;</h2>
+                        <p className="mt-4">Learn about Next.js in an interactive course with quizzes!</p>
                     </a>
 
                     <a
                         href="https://github.com/vercel/next.js/tree/canary/examples"
+                        className="block border p-5"
                     >
-                        <h2>Examples &rarr;</h2>
-                        <p>Discover and deploy boilerplate example Next.js projects.</p>
+                        <h2 className="text-xl font-bold">Examples &rarr;</h2>
+                        <p className="mt-4">Discover and deploy boilerplate example Next.js projects.</p>
                     </a>
 
                     <a
                         href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                        className="block border p-5"
                     >
-                        <h2>Deploy &rarr;</h2>
-                        <p>
+                        <h2 className="text-xl font-bold">Deploy &rarr;</h2>
+                        <p className="mt-4">
                             Instantly deploy your Next.js site to a public URL with Vercel.
                         </p>
                     </a>
                 </div>
             </main>
 
-            <footer>
+            <footer className="p-5 text-center border-t text-sm">
                 <a
                     href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
                     target="_blank"
