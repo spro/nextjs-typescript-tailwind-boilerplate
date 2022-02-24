@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js TypeScript & TailwindCSS boilerplate
 
-## Getting Started
+## Steps to get here
 
-First, run the development server:
+1. Create Next.js app
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    ```
+    yarn create next-app --typescript
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install and configure ESLint
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+    ```
+    yarn add --dev eslint
+    yarn create @eslint/config
+    ```
+    
+    - In ESLint wizard config
+        - Choose to check syntax, problems, and style
+        - Choose Javascript modules, React, TypeScript, Browser & Node, JS config
+        - Answer questions about style:
+            - 4 space indentation
+            - Double quote strings
+            - Unix line endings
+            - No semicolons
+    
+    - In .eslintrc.js
+        - Add plugin `@next/next/recommended`
+        - Add "object-curly-spacing" rule (warn, always)
+        - Add react version to settings https://github.com/yannickcr/eslint-plugin-react#configuration
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+    - Remove existing .eslintrc.json
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. Fix template files for linter
+    
+    - Reindent files from 2 to 4 spaces
+    - Change quotes from single to double
+    - Add `import React from "react"` to all JSX files
+    - Check linting with `eslint .`
 
-## Learn More
+4. Install and configure Tailwind
+    
+    ```
+    yarn add tailwindcss postcss autoprefixer @tailwindcss/forms
+    yarn run tailwindcss init
+    ```
+    
+    - Remove `styles/Home.module.css` its import in `pages/index.tsx`
+    - Replace `styles/globals.css` with Tailwind setup:
+        ```
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        ```
+    - Remove `className={...}` from `pages/index.tsx`
+    
+    - Create `tailwind.config.js` according to https://tailwindcss.com/docs/guides/nextjs
+    - Add plugin `@tailwindcss/forms` to `tailwind.config.js`
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    - Set Tailwind classNames in `pages/index.tsx` to match original boilerplate
